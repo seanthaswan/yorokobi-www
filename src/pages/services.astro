@@ -1,0 +1,53 @@
+---
+
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+const meta = {
+  title:  "Yorokobi Brows | Services",
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+import Service from "../components/Service.astro";
+const haircutServices = [
+  {
+    name: "Haircut",
+    price: "$150.00",
+    description: "A customized haircut designed by your stylist to fit your individual style and preferences.",
+    duration: "90",
+  },
+];
+
+const colorServices = [
+  {
+    name: "Single Process (Roots to Ends)",
+    price: "Starting at $230.00",
+    description:
+      "This service is for clients wanting a one dimensional color whether that is to cover greys, darken or lighten. It is ideal for first time clients wanting to aim for one solid lighter shade. Service includes color, toner, a shampoo and blowdry.",
+    duration: "120",
+  }
+];
+---
+
+<Layout {meta}>
+    <section class="content h-full p-6 max-w-475">
+      <h1 class="underline text-3xl text-center mb-8">Services and Prices</h1>
+      <p class="italic text-center mb-8">*All prices are starting points.</p>
+      <h2 class="text-2xl mb-8 text-center border border-slate-700">Haircut and Other</h2>
+      <div class="flex flex-col gap-2">
+        {
+          haircutServices.map((item) => {
+            return <Service serviceData={item} />;
+          })
+        }
+      </div>
+      <h2 class="text-2xl mb-8 text-center border border-slate-700">Color</h2>
+      <div class="flex flex-col gap-2">
+        {
+          colorServices.map((item) => {
+            return <Service serviceData={item} />;
+          })
+        }
+      </div>
+    </section>
+    <p class="italic text-center mb-8 px-4">*Additional charges may apply depending on volume of product and add-ons.</p>
+</Layout>

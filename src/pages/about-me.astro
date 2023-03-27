@@ -1,0 +1,66 @@
+---
+import { Image } from '@astrojs/image/components';
+import Layout from '~/layouts/PageLayout.astro';
+import { SITE } from '~/config.mjs';
+
+import portrait1 from '../assets/images/about-me/portrait1.jpeg';
+import portrait2 from '../assets/images/about-me/portrait2.jpeg';
+const meta = {
+  title: 'Yorokobi Brows | About Me',
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<Layout {meta}>
+    <section class="content h-full py-8 px-6 text-lg">
+      <a
+        href="/"
+        rel="author prefetch"
+        class="text-xl p-2 border border-transparent hover:border hover:border-slate-600 pointer transition-all rounded-sm mb-4 relative bottom-3"
+        >←</a
+      >
+      
+      <div class="flex gap-2 justify-around mb-8">
+        <Image
+          src={portrait1}
+          alt="Portrait of Hanna Nakamura"
+          class="shadow shadow-skinShadow/40 block rounded-sm w-1/3  object-cover"
+        />
+        <Image
+          src={portrait2}
+          alt="Portrait of Hanna Nakamura"
+          class="shadow shadow-skinShadow/40 block rounded-sm w-1/3  object-cover"
+        />
+      </div>
+
+      <p class="mb-7">
+        Hey There! My name is Hanna Nakamura and I am the artist behind Yorokobi Brows.
+      </p>
+
+
+      <p class="mb-7">
+         My biggest passion is to make
+        you feel confident in your own skin. Permanent makeup is meant to enhance your natural beauty, not change it
+        drastically. My goal is to create a better you, all while keeping your skins integrity at its best. I use
+        exceptional techniques to ensure your healed results are soft and undetectable.
+      </p>
+      <p class="mb-7">
+Visit my website to learn about the services I provide and to view examples of my work. For additional updates and insights, follow my Instagram account @YorokobiBrows.
+      </p>
+
+
+      <a
+        href="/"
+        rel="prefetch"
+        class="text-xl p-2 border border-transparent pointer hover:border hover:border-slate-600 transition-all rounded-sm mb-4 relative top-3"
+        >←</a
+      >
+    </section>
+</Layout>
+
+<style>
+p {
+  @apply text-sm;
+}
+</style>

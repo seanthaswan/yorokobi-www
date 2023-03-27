@@ -1,0 +1,68 @@
+---
+import placeholder from "../assets/images/placeholder.png?url";
+import lips1 from "../assets/images/home/lips-1.jpeg?url";
+import tattoo1 from "../assets/images/home/tattoo-1.jpeg?url";
+import Block, { BlockData } from "./Block.astro";
+import HalfHalfBlock from "./HalfHalfBlock.astro";
+import MiniBlock, { MiniBlockData } from "./MiniBlock.astro";
+
+
+const servicesBlockData: BlockData = {
+  mediaPos: "left",
+  media: lips1,
+  title: "Services & Pricing",
+  bodyText: "Take a look at my service menu.",
+  linkUrl: "/services",
+  linkText: "View Services",
+};
+const faqBlockData: BlockData = {
+  mediaPos: "right",
+  media: placeholder,
+  title: "FAQs",
+  bodyText: "Frequently Asked Questions",
+  linkUrl: "/#",
+  linkText: "View FAQs",
+};
+
+const aboutMeBlockData: BlockData = {
+  mediaPos: "left",
+  media: tattoo1,
+  title: "About Me",
+  bodyText: "Get to know me better and learn about my passion for the beauty industry and my dedication to providing exceptional service to my clients. Click below to learn more about my journey as a hairstylist.",
+  linkUrl: "/about-me",
+  linkText: "Get To Know Me",
+};
+
+const reviewBlockData: MiniBlockData = {
+  title: "Leave a Positive Review on Google",
+  text: "",
+  linkUrl: "/about-me",
+  iconUrl: "Google Reviews",
+};
+const bookingBlockData: BlockData = {
+  mediaPos: "right",
+  media: placeholder,
+  title: "Book With Hanna",
+  // bodyText: "Ready for a fresh new look? Book your appointment with me now and let's bring your hair vision to life. Click here to view my availability and schedule your service today.",
+  bodyText: "Due to the transition to my new salon, all bookings will be manually reviewed and priority will be given to returning clients. Click here to view the best way to get on my books.",
+  // linkUrl:
+  //   "https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVLhDeHmL54q4iUQyZ7p7J3QcXu3kxU4jI16W0WHGVJeVQVjNBpvfgQXfdYXSs7AaF0ClWT3PX8zKuwTqey4gMGtiXD+huCMk1+dqlwIzNGCXFh397kd57bs3/9O0IcP/o8GnBBgJyWTd3YJMM27SGbujrk1s/xvnBqZdbL8gSIxBxVfhY/dgk6mo2Soyk3mxQ+p2mgPagfF1FO6r/hCTEa2JeCJxGnbu+/1iWZz7iBvMahaIopWvM/LZ0/IkKzfoMj5TH5m+/kkDUxNlNhXvuh7rO+QI517YYqy494+QU/s4T/CVq+Du8fyqGSKMxuM/MX/nIMEkf6OhFyXpxzBy+SsQnzoR0rH/awFi1Yrm0jbz&c_type=tab",
+  linkUrl: "/book",
+  linkText: "How to Book",
+};
+const bookingMiniBlockData: MiniBlockData = {
+  title: "Book With Hanna",
+  text: "",
+  linkUrl: "/#",
+  iconUrl: "",
+};
+
+---
+
+<MiniBlock blockData={bookingMiniBlockData} />
+<Block blockData={servicesBlockData} />
+<Block blockData={faqBlockData} />
+<Block blockData={aboutMeBlockData} />
+<MiniBlock blockData={reviewBlockData} />
+<!-- <Block blockData={bookingBlockData} /> -->
+<!-- <HalfHalfBlock /> -->
